@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OK MOKCHANG - Nhà Hàng Thịt Bỏ Nướng Than Hoa Hàn Quốc</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #E63946;
+            --primary-hover: #C5221F;
+            --secondary-color: #F4A261;
+            --accent-color: #D4A373;
+            --bg-light: #FAFAFA;
+            --bg-white: #FFFFFF;
+            --text-dark: #2B2D42;
+            --text-muted: #6C757D;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo-sub {
+            font-size: 12px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-call {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn-call:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                        url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .highlights {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .badge-tag {
+            background-color: var(--bg-white);
+            border: 2px solid var(--secondary-color);
+            color: var(--text-dark);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Info Section */
+        .info-bar {
+            background-color: #FFF8F0;
+            border-y: 1px solid #FFE3D1;
+            padding: 20px;
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .info-item i {
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        /* Menu Container */
+        .menu-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Category Filter Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            background-color: var(--bg-white);
+            border: 1px solid #E0E0E0;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.2);
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 22px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #F0F0F0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .item-kr {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: 'Noto Sans KR', sans-serif;
+            margin-top: 2px;
+        }
+
+        .item-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+
+        .item-details {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            border-top: 1px dashed #EEE;
+            padding-top: 10px;
+        }
+
+        .item-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .item-details li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+        }
+
+        .item-details li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .item-tag {
+            display: inline-block;
+            background-color: #FFF3E0;
+            color: #E65100;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* Call to Action Footer Note */
+        .note-box {
+            background-color: #FFF8E1;
+            border-left: 4px solid #FFB300;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+        }
+
+        .note-box h4 {
+            margin-bottom: 8px;
+            color: #F57F17;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-col p {
+            color: #CCC;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-text">OK MOKCHANG</span>
+                <span class="logo-sub">BẮC GIANG</span>
+            </a>
+            <nav>
+                <a href="#about">Giới Thệu</a>
+                <a href="#menu">Thực Đơn</a>
+                <a href="#contact">Liên Hệ</a>
+            </nav>
+            <a href="tel:0825832666" class="btn-call">
+                <i class="fa-solid fa-phone"></i> 0825.832.666
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <h1>OK MOKCHANG BẮC GIANG</h1>
+            <p>Nhà Hàng Thịt Bò Nướng Than Hoa Hàn Quốc Chuẩn Vị</p>
+            <div class="highlights">
+                <div class="badge-tag"><i class="fa-solid fa-certificate" style="color:#E63946"></i> Đạt Chuẩn U.S.D.A Prime</div>
+                <div class="badge-tag"><i class="fa-solid fa-fire" style="color:#F4A261"></i> Nướng Than Hoa Tự Nhiên</div>
+                <div class="badge-tag"><i class="fa-solid fa-bowl-food" style="color:#4CAF50"></i> Free 8-10 Món PanChan</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Bar -->
+    <section class="info-bar">
+        <div class="info-container">
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>342-344 Nguyễn Thị Lưu, P. Bắc Giang, T. Bắc Ninh</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Hotline: 0825.832.666</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Mở cửa: 10:00 - 23:00 hàng ngày</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="section-title">
+            <h2>Thực Đơn Nhà Hàng</h2>
+            <p>Khám phá văn hóa ẩm thực Nướng & Lẩu Hàn Quốc đậm đà</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterMenu('all')">Tất Cả Món</button>
+            <button class="tab-btn" onclick="filterMenu('bo-le')">Món Lẻ Bò</button>
+            <button class="tab-btn" onclick="filterMenu('bo-combo')">Combo Thịt Bò</button>
+            <button class="tab-btn" onclick="filterMenu('lon')">Thịt Lợn</button>
+            <button class="tab-btn" onclick="filterMenu('lau')">Món Lẩu</button>
+            <button class="tab-btn" onclick="filterMenu('xao-khac')">Món Xào & Bánh</button>
+            <button class="tab-btn" onclick="filterMenu('com-my-canh')">Cơm, Mỳ & Canh</button>
+        </div>
+
+        <!-- Menu Grid Container -->
+        <div class="menu-grid" id="menuGrid">
+            <!-- JavaScript sẽ tải món ăn vào đây -->
+        </div>
+
+        <!-- Important Notes -->
+        <div class="note-box">
+            <h4><i class="fa-solid fa-circle-info"></i> Ghi chú dịch vụ:</h4>
+            <ul>
+                <li>Miễn phí 8 - 10 món PanChan kèm theo không giới hạn.</li>
+                <li>Thịt bò nhập khẩu từ Mỹ đạt tiêu chuẩn chất lượng U.S.D.A Prime.</li>
+                <li>Món nướng tùy chọn: Ướp muối tự nhiên hoặc Ướp sốt Hàn Quốc đặc trưng.</li>
+                <li>Giá trên chưa bao gồm 8% thuế VAT (8% 부가세 별도).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>OK MOKCHANG BẮC GIANG</h3>
+                <p>Thưởng thức hương vị thịt bò nướng nhập khẩu Mỹ nướng than hoa chuẩn phong cách Hàn Quốc ngay tại Bắc Giang.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Địa Chỉ & Đặt Bàn</h3>
+                <p><i class="fa-solid fa-map-marker-alt"></i> 342-344 Nguyễn Thị Lưu, P. Bắc Giang, T. Bắc Ninh</p>
+                <p><i class="fa-solid fa-phone"></i> Hotline: 0825.832.666</p>
+            </div>
+            <div class="footer-col">
+                <h3>Thời Gian Mở Cửa</h3>
+                <p>Thứ Hai - Chủ Nhật: 10:00 - 23:00</p>
+                <p>Phục vụ liên tục tất cả các ngày lễ, Tết.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 OK Mokchang Bắc Giang. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript Data & Interactivity -->
+    <script>
+        const menuData = [
+            // MÓN LẺ BÒ
+            { cat: 'bo-le', name: 'Ba Chỉ Bò Mỹ', kr: '우삼겹살', price: '180.000 VNĐ', desc: '200g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Dẻ Sườn Hoàng Đế', kr: '황제 꽃 갈비살', price: '220.000 VNĐ', desc: '130g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Dẻ Sườn Non Cao Cấp', kr: '늑간 갈비살', price: '230.000 VNĐ', desc: '130g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Gầu Bò Cao Cấp', kr: '차돌박이', price: '230.000 VNĐ', desc: '200g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Dẻ Sườn Có Xương LA', kr: '뼈 갈비살', price: '330.000 VNĐ', desc: '150g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Lõi Vai Cao Cấp', kr: '부채살', price: '360.000 VNĐ', desc: '200g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Diềm Thăn Thượng Hạng', kr: '안창살', price: '480.000 VNĐ', desc: '150g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Thăn Nội Thượng Hạng', kr: '소 안심', price: '580.000 VNĐ', desc: '200g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Sườn Bò Có Xương Thượng Hạng', kr: '왕갈비', price: '590.000 VNĐ', desc: '350g | Ướp Muối / Ướp Sốt' },
+            { cat: 'bo-le', name: 'Sườn Non Thượng Hạng', kr: '꽃살', price: '599.000 VNĐ', desc: '150g | Ướp Muối / Ướp Sốt' },
+
+            // COMBO BÒ
+            { cat: 'bo-combo', name: 'Combo 1 (2 người)', kr: '콤보 1', price: '559.000 VNĐ', items: ['200g Ba Chỉ Bò Mỹ Ướp Sốt', '150g Dẻ Sườn Hoàng Đế', '200g Ba Chỉ Lợn Tảng'] },
+            { cat: 'bo-combo', name: 'Combo 2 (2-3 người)', kr: '콤보 2', price: '890.000 VNĐ', items: ['150g Dẻ Sườn Non Cao Cấp', '150g Dẻ Sườn Hoàng Đế', '200g Ba Chỉ Bò Mỹ', '200g Lõi Bò Cao Cấp'] },
+            { cat: 'bo-combo', name: 'Combo 3 (4-5 người)', kr: '콤보 3', price: '1.350.000 VNĐ', items: ['400g Dẻ Sườn Có Xương LA', '150g Dẻ Sườn Hoàng Đế', '200g Gầu Bò Cao Cấp', '200g Ba Chỉ Bò Mỹ'] },
+            { cat: 'bo-combo', name: 'Combo 4 (4-5 người)', kr: '콤보 4', price: '1.499.000 VNĐ', items: ['500g Lõi Vai Cao Cấp', '200g Dẻ Sườn Hoàng Đế', '200g Ba Chỉ Bò Mỹ', '130g Dẻ Sườn Non Cao Cấp'] },
+            { cat: 'bo-combo', name: 'Combo 5 (4-5 người)', kr: '콤보 5', price: '1.750.000 VNĐ', items: ['600g Sườn Bò Có Xương Thượng Hạng', '150g Dẻ Sườn Non Cao Cấp', '200g Ba Chỉ Bò Mỹ'] },
+            { cat: 'bo-combo', name: 'Combo 6 (4-5 người)', kr: '콤보 6', price: '1.950.000 VNĐ', items: ['500g Diềm Thăn Thượng Hạng', '200g Dẻ Sườn Hoàng Đế', '200g Ba Chỉ Bò Mỹ'] },
+            { cat: 'bo-combo', name: 'Combo 7 (4-5 người)', kr: '콤보 7', price: '1.999.000 VNĐ', items: ['500g Thăn Nội Bò Thượng Hạng', '200g Dẻ Sườn Hoàng Đế', '200g Ba Chỉ Bò Mỹ', '200g Lõi Vai Cao Cấp'] },
+            { cat: 'bo-combo', name: 'Combo 8 (4-5 người)', kr: '콤보 8', price: '2.299.000 VNĐ', items: ['500g Sườn Non Thượng Hạng', '200g Dẻ Sườn Hoàng Đế', '200g Ba Chỉ Bò Mỹ'] },
+            { cat: 'bo-combo', name: 'Combo 9 (4-5 người)', kr: '콤보 9', price: '2.499.000 VNĐ', items: ['350g Sườn Bò Có Xương Thượng Hạng', '200g Sườn Non Thượng Hạng', '200g Diềm Thăn Thượng Hạng', '150g Gầu Bò Cao Cấp', '150g Lõi Vai Cao Cấp'] },
+            { cat: 'bo-combo', name: 'Set Thịt Bò Tổng Hợp (8-10 người)', kr: '소고기 모듬구이', price: '3.290.000 VNĐ', items: ['350g Sườn Bò Có Xương', '300g Ba Chỉ Bò Mỹ', '200g Gầu Bò Cao Cấp', '200g Dẻ Sườn Hoàng Đế', '200g Dẻ Sườn Non', '150g Sườn Non Thượng Hạng', '150g Diềm Thăn Thượng Hạng', '150g Lõi Vai Cao Cấp', '150g Thăn Nội Cao Cấp'] },
+
+            // THỊT LỢN & COMBO
+            { cat: 'lon', name: 'Ba Chỉ Lợn Tảng', kr: '돼지 생삼겹살', price: '220.000 VNĐ', desc: '200g' },
+            { cat: 'lon', name: 'Ba Chỉ Lợn Thái Lát', kr: '대패 삼겹살', price: '220.000 VNĐ', desc: '200g' },
+            { cat: 'lon', name: 'Nạc Má Lợn', kr: '항정살', price: '220.000 VNĐ', desc: '200g' },
+            { cat: 'lon', name: 'Sườn Lợn Ướp Sốt', kr: '양념 돼지갈비', price: '220.000 VNĐ', desc: '200g' },
+            { cat: 'lon', name: 'Khấu Đuôi Nướng', kr: '돼지 봉막창', price: '380.000 VNĐ', desc: '200g' },
+            { cat: 'lon', name: 'Set Thịt Lợn (4-5 người)', kr: '돼지고기 모듬구이', price: '899.000 VNĐ', items: ['250g Ba Chỉ Lợn', '250g Nạc Má Lợn', '250g Ba Chỉ Lợn Thái Lát', '250g Thịt Sườn Lợn Ướp Sốt'] },
+            { cat: 'lon', name: 'Combo 10 (4-5 người)', kr: '콤보 10', price: '1.199.000 VNĐ', items: ['150g Dẻ Sườn Hoàng Đế', '150g Dẻ Sườn Non', '200g Ba Chỉ Lợn', '200g Sườn Lợn Ướp Sốt', '200g Má Lợn'] },
+            { cat: 'lon', name: 'Combo Lẩu Nướng (4-6 người)', kr: '전골+구이 콤보', price: '1.399.000 VNĐ', items: ['Tùy chọn 1 trong 6 loại Lẩu bất kỳ', 'Thịt nướng: 150g Dẻ Sườn Hoàng Đế, 150g Dẻ Sườn Non, 200g Ba Chỉ Lợn, 200g Sườn Lợn Ướp Sốt, 200g Má Lợn'] },
+
+            // MÓN LẨU
+            { cat: 'lau', name: 'Lẩu Lòng Bò (GopChang)', kr: '곱창전골', price: 'Size L: 440K | XL: 650K', desc: 'Đặc sản lòng bò béo ngậy' },
+            { cat: 'lau', name: 'Lẩu Xúc Xích', kr: '부대찌개 전골', price: 'Size L: 440K | XL: 600K', desc: 'Độ cay vừa phải, chuẩn Hàn' },
+            { cat: 'lau', name: 'Lẩu Bạch Tuộc', kr: '낙지전골', price: 'Size L: 440K | XL: 650K', desc: 'Bạch tuộc tươi giòn cay nồng' },
+            { cat: 'lau', name: 'Lẩu Cá Đông Thê, Minh Thái', kr: '동태 전골', price: 'Size L: 440K | XL: 600K', desc: 'Đậm đà hương vị biển' },
+            { cat: 'lau', name: 'Lẩu Thịt Bò', kr: '소고기 전골', price: 'Size L: 400K | XL: 540K', desc: 'Nước dùng ngọt thanh' },
+            { cat: 'lau', name: 'Lẩu Sườn Bò Kim Chi', kr: '소갈비 김치 전골', price: 'Size L: 450K | XL: 650K', desc: 'Sườn bò mềm & kimchi chua cay' },
+
+            // XÀO & BÁNH
+            { cat: 'xao-khac', name: 'Bạch Tuộc Xào Cay', kr: '쭈꾸미 볶음', price: '380.000 VNĐ', desc: 'Đặc sản cay Hàn Quốc' },
+            { cat: 'xao-khac', name: 'Thịt Lợn Xào Cay', kr: '제육볶음', price: '220.000 VNĐ', desc: 'Ăn kèm cơm rất đưa miệng' },
+            { cat: 'xao-khac', name: 'Thịt Lợn Xào Kim Chi', kr: '돼지고기 김치볶음', price: '220.000 VNĐ', desc: 'Vị đậm đà chuẩn xứ Kimchi' },
+            { cat: 'xao-khac', name: 'Gỏi Bò (Yukhoe)', kr: '육회', price: '540.000 VNĐ', desc: '150g | Thịt bò tươi sống ướp vị' },
+            { cat: 'xao-khac', name: 'TokBokKi Xào Cay', kr: '떡볶이', price: 'Size L: 160K | XL: 270K', desc: 'Bánh gạo cay dẻo quánh' },
+            { cat: 'xao-khac', name: 'Mực Xào Cay', kr: '오징어 볶음', price: '330.000 VNĐ', desc: 'Mực tươi giòn ngọt' },
+            { cat: 'xao-khac', name: 'Bánh Hải Sản', kr: '해물파전', price: '160.000 VNĐ', desc: 'Bánh chiên giòn rụm' },
+            { cat: 'xao-khac', name: 'Bánh Hẹ', kr: '부추전', price: '160.000 VNĐ', desc: 'Thơm vị hẹ tươi' },
+            { cat: 'xao-khac', name: 'Bánh Kim Chi', kr: '김치전', price: '110.000 VNĐ', desc: 'Chua nhẹ giòn ngon' },
+
+            // CƠM, MỲ, CANH
+            { cat: 'com-my-canh', name: 'Cơm Trộn Dolsot', kr: '돌솥 비빔밥', price: '130.000 VNĐ', desc: 'Cơm trộn thố đá nóng' },
+            { cat: 'com-my-canh', name: 'Cơm Trộn Trứng Cá', kr: '생선 알 비빔밥', price: '140.000 VNĐ', desc: 'Bổ dưỡng & lạ miệng' },
+            { cat: 'com-my-canh', name: 'Mỳ Tương Đen', kr: '짜장면', price: '130.000 VNĐ', desc: 'Mỳ Jajangmyeon truyền thống' },
+            { cat: 'com-my-canh', name: 'Miến Lạnh / Trộn', kr: '물냉면 / 비빔냉면', price: '130.000 VNĐ', desc: 'Giải nhiệt tuyệt vời' },
+            { cat: 'com-my-canh', name: 'Canh Sườn Bò', kr: '갈비탕', price: '200.000 VNĐ', desc: 'Nước dùng ninh sườn ngọt thanh' },
+            { cat: 'com-my-canh', name: 'Canh Đậu Tương Thịt Bò', kr: '된장찌개 소고기', price: '160.000 VNĐ', desc: 'Đậm đà hương vị truyền thống' },
+            { cat: 'com-my-canh', name: 'Canh Sườn Lợn Khoai Tây', kr: '감자탕', price: '170.000 VNĐ', desc: 'Nước dùng đậm đà béo ngậy' },
+            { cat: 'com-my-canh', name: 'Canh Đậu Hũ Non', kr: '순두부찌개', price: '170.000 VNĐ', desc: 'Đậu hũ mềm cay nhẹ' },
+            { cat: 'com-my-canh', name: 'Trứng Hấp / Trứng Cuộn', kr: '계란찜 / 계란말이', price: '50.000 - 90.000 VNĐ', desc: 'Món ăn kèm yêu thích' }
+        ];
+
+        function renderMenu(items) {
+            const grid = document.getElementById('menuGrid');
+            grid.innerHTML = '';
+
+            items.forEach(item => {
+                let detailsHTML = '';
+                if (item.items) {
+                    detailsHTML = `<div class="item-details"><ul>${item.items.map(i => `<li>${i}</li>`).join('')}</ul></div>`;
+                } else if (item.desc) {
+                    detailsHTML = `<div class="item-details"><span class="item-tag">${item.desc}</span></div>`;
+                }
+
+                const card = `
+                    <div class="menu-card">
+                        <div>
+                            <div class="card-header">
+                                <div>
+                                    <div class="item-title">${item.name}</div>
+                                    <div class="item-kr">${item.kr}</div>
+                                </div>
+                                <div class="item-price">${item.price}</div>
+                            </div>
+                            ${detailsHTML}
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        function filterMenu(category) {
+            // Update Active Class on Buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (category === 'all') {
+                renderMenu(menuData);
+            } else {
+                const filtered = menuData.filter(item => item.cat === category);
+                renderMenu(filtered);
+            }
+        }
+
+        // Initialize Menu on Load
+        window.onload = () => {
+            renderMenu(menuData);
+        };
+    </script>
+</body>
+</html>
